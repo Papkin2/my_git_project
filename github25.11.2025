@@ -1,0 +1,442 @@
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH
+$ git clone https://github.com/Papkin2/my_git_project.git
+Cloning into 'my_git_project'...
+remote: Enumerating objects: 29, done.
+remote: Counting objects: 100% (29/29), done.
+remote: Compressing objects: 100% (14/14), done.
+remote: Total 29 (delta 6), reused 29 (delta 6), pack-reused 0 (from 0)
+Receiving objects: 100% (29/29), done.
+Resolving deltas: 100% (6/6), done.
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH
+$ git log
+fatal: not a git repository (or any of the parent directories): .git
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH
+$ cd my_git_project/
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git log --oneline
+7e064cb (HEAD -> master, origin/master, origin/HEAD) Add 'Setup environment' to
+project plan
+939de2f Uwzględnienie danych w planie projektu
+f564a8d Utworzono plik .gitignore.
+b3603a3 Zmieniono nazwę pliku.
+b73dd80 Usunięto plik z konfiguracją środowiska w Pythonie
+f0e0ccd Dodano opis projektu.
+a4c9999 Zmodyfikowano plan projektu, utworzono pliki z licencją oraz konfiguracj
+ą środowiska w Pythonie
+ee21670 Utworzono plik z planem projektu
+5ded3c4 Zmieniono tytuł w pliku .
+50884e9 Utworzono plik README.md
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git config --global user.name = "Bartłomiej Chuchmacz"
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git config --global user.email = "237192@student.uek.krakow.pl"
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = false
+        bare = false
+        logallrefupdates = true
+        symlinks = false
+        ignorecase = true
+[remote "origin"]
+        url = https://github.com/Papkin2/my_git_project.git
+        fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+        remote = origin
+        merge = refs/heads/master
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ ls
+LICENSE.txt  Readme.md  project_plan.txt
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git pull
+Already up to date.
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git pull
+Already up to date.
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git log --oneline
+7e064cb (HEAD -> master, origin/master, origin/HEAD) Add 'Setup environment' to project plan
+939de2f Uwzględnienie danych w planie projektu
+f564a8d Utworzono plik .gitignore.
+b3603a3 Zmieniono nazwę pliku.
+b73dd80 Usunięto plik z konfiguracją środowiska w Pythonie
+f0e0ccd Dodano opis projektu.
+a4c9999 Zmodyfikowano plan projektu, utworzono pliki z licencją oraz konfiguracją środowiska w Pythonie
+ee21670 Utworzono plik z planem projektu
+5ded3c4 Zmieniono tytuł w pliku .
+50884e9 Utworzono plik README.md
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ ls
+LICENSE.txt  Readme.md  project_plan.txt
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git tag
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git tag -a v1.0 -m 'Wersja alpha'
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git tag
+v1.0
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git show v1.0
+tag v1.0
+Tagger: = <=>
+Date:   Tue Nov 25 08:32:52 2025 +0100
+
+Wersja alpha
+
+commit 7e064cbcedb35d7c02a238c40b8c6b61481da5bb (HEAD -> master, tag: v1.0, origin/master, origin/HEAD)
+Author: Bartłomiej Chuchmacz <237192@student.uek.krakow.pl>
+Date:   Tue Nov 18 12:22:26 2025 +0100
+
+    Add 'Setup environment' to project plan
+
+diff --git a/project_plan.txt b/project_plan.txt
+index 135e3fa..389f96f 100644
+--- a/project_plan.txt
++++ b/project_plan.txt
+@@ -1,3 +1,4 @@
+ My project plan
+ 1. Consolidate project team
+ 2. Collect data
++3. Setup environment
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git tag v1.0l
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git tag
+v1.0
+v1.0l
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git show v1.0l
+commit 7e064cbcedb35d7c02a238c40b8c6b61481da5bb (HEAD -> master, tag: v1.0l, tag: v1.0, origin/master, origin/HEAD)
+Author: Bartłomiej Chuchmacz <237192@student.uek.krakow.pl>
+Date:   Tue Nov 18 12:22:26 2025 +0100
+
+    Add 'Setup environment' to project plan
+
+diff --git a/project_plan.txt b/project_plan.txt
+index 135e3fa..389f96f 100644
+--- a/project_plan.txt
++++ b/project_plan.txt
+@@ -1,3 +1,4 @@
+ My project plan
+ 1. Consolidate project team
+ 2. Collect data
++3. Setup environment
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git remote get-url
+usage: git remote get-url [--push] [--all] <name>
+
+    --push                query push URLs rather than fetch URLs
+    --all                 return all URLs
+
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git remote --get-url
+error: unknown option `get-url'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename [--[no-]progress] <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git remote get-url
+usage: git remote get-url [--push] [--all] <name>
+
+    --push                query push URLs rather than fetch URLs
+    --all                 return all URLs
+
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git remote get-url --all
+usage: git remote get-url [--push] [--all] <name>
+
+    --push                query push URLs rather than fetch URLs
+    --all                 return all URLs
+
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git log --oneline
+7e064cb (HEAD -> master, tag: v1.0l, tag: v1.0, origin/master, origin/HEAD) Add 'Setup environment' to project plan
+939de2f Uwzględnienie danych w planie projektu
+f564a8d Utworzono plik .gitignore.
+b3603a3 Zmieniono nazwę pliku.
+b73dd80 Usunięto plik z konfiguracją środowiska w Pythonie
+f0e0ccd Dodano opis projektu.
+a4c9999 Zmodyfikowano plan projektu, utworzono pliki z licencją oraz konfiguracją środowiska w Pythonie
+ee21670 Utworzono plik z planem projektu
+5ded3c4 Zmieniono tytuł w pliku .
+50884e9 Utworzono plik README.md
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git tag -a v0.1 f0e0ccd -m 'Initial version'
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git tag
+v0.1
+v1.0
+v1.0l
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ show v0.1
+bash: show: command not found
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git show v0.1
+tag v0.1
+Tagger: = <=>
+Date:   Tue Nov 25 08:39:50 2025 +0100
+
+Initial version
+
+commit f0e0ccd247030a0cd079f8190cf16760f5d1e5b2 (tag: v0.1)
+Author: Bartłomiej Chuchmacz <237192@student.uek.krakow.pl>
+Date:   Tue Nov 4 08:30:12 2025 +0100
+
+    Dodano opis projektu.
+
+diff --git a/README.md b/README.md
+index b2394dd..c7a54e6 100644
+--- a/README.md
++++ b/README.md
+@@ -1 +1,2 @@
+ My new git project
++Project description:
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git push
+info: please complete authentication in your browser...
+Everything up-to-date
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git push origin/master
+fatal: 'origin/master' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git push origin v1.0
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 143 bytes | 143.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Papkin2/my_git_project.git
+ * [new tag]         v1.0 -> v1.0
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git push origin --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 145 bytes | 145.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Papkin2/my_git_project.git
+ * [new tag]         v0.1 -> v0.1
+ * [new tag]         v1.0l -> v1.0l
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git checkout
+Your branch is up to date with 'origin/master'.
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git checkout -b initial_version v0.1
+Switched to a new branch 'initial_version'
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (initial_version)
+$ git branch
+* initial_version
+  master
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (initial_version)
+$ ls
+LICENSE.txt  README.md  environment.yml  project_plan.txt
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (initial_version)
+$ cat project_plan.txt
+My project plan
+1. Consolidate project team
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (initial_version)
+$ git branch -a
+* initial_version
+  master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (initial_version)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ cat project_plan.txt
+My project plan
+1. Consolidate project team
+2. Collect data
+3. Setup environment
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git config --global alias.co checkout
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git co initial version
+error: pathspec 'initial' did not match any file(s) known to git
+error: pathspec 'version' did not match any file(s) known to git
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git co initial_version
+Switched to branch 'initial_version'
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (initial_version)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git config --global alias.logs "log --oneline"
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git logs
+7e064cb (HEAD -> master, tag: v1.0l, tag: v1.0, origin/master, origin/HEAD) Add 'Setup environment' to project plan
+939de2f Uwzględnienie danych w planie projektu
+f564a8d Utworzono plik .gitignore.
+b3603a3 Zmieniono nazwę pliku.
+b73dd80 Usunięto plik z konfiguracją środowiska w Pythonie
+f0e0ccd (tag: v0.1, initial_version) Dodano opis projektu.
+a4c9999 Zmodyfikowano plan projektu, utworzono pliki z licencją oraz konfiguracją środowiska w Pythonie
+ee21670 Utworzono plik z planem projektu
+5ded3c4 Zmieniono tytuł w pliku .
+50884e9 Utworzono plik README.md
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git branch -d initial_version
+Deleted branch initial_version (was f0e0ccd).
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ git branch -a
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ ls -a
+./  ../  .git/  .gitignore  LICENSE.txt  Readme.md  project_plan.txt
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project (master)
+$ cd .git
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git (GIT_DIR!)
+$ ls
+FETCH_HEAD  HEAD  ORIG_HEAD  config  description  hooks/  index  info/  logs/  objects/  packed-refs  refs/
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git (GIT_DIR!)
+$ cat HEAD
+ref: refs/heads/master
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git (GIT_DIR!)
+$ cd refs/
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs (GIT_DIR!)
+$ ls
+heads/  remotes/  tags/
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs (GIT_DIR!)
+$ cd heads
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/heads (GIT_DIR!)
+$ ls
+master
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/heads (GIT_DIR!)
+$ cat master
+7e064cbcedb35d7c02a238c40b8c6b61481da5bb
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/heads (GIT_DIR!)
+$ cd ..
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs (GIT_DIR!)
+$ git cd remotes
+git: 'cd' is not a git command. See 'git --help'.
+
+The most similar command is
+        co
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs (GIT_DIR!)
+$ cd remotes/
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/remotes (GIT_DIR!)
+$ ls
+origin/
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/remotes (GIT_DIR!)
+$ cd origin/
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/remotes/origin (GIT_DIR!)
+$ ls
+HEAD
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/remotes/origin (GIT_DIR!)
+$ cat head
+ref: refs/remotes/origin/master
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/remotes/origin (GIT_DIR!)
+$ git logs
+7e064cb (HEAD -> master, tag: v1.0l, tag: v1.0, origin/master, origin/HEAD) Add 'Setup environment' to project plan
+939de2f Uwzględnienie danych w planie projektu
+f564a8d Utworzono plik .gitignore.
+b3603a3 Zmieniono nazwę pliku.
+b73dd80 Usunięto plik z konfiguracją środowiska w Pythonie
+f0e0ccd (tag: v0.1) Dodano opis projektu.
+a4c9999 Zmodyfikowano plan projektu, utworzono pliki z licencją oraz konfiguracją środowiska w Pythonie
+ee21670 Utworzono plik z planem projektu
+5ded3c4 Zmieniono tytuł w pliku .
+50884e9 Utworzono plik README.md
+
+s-A115-11@K-A115-11 MINGW64 /d/BCH/my_git_project/.git/refs/remotes/origin (GIT_DIR!)
+$
