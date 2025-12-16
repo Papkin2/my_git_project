@@ -5,3 +5,4 @@ My project plan:
 4. Plan meeting with product owner.
 5. Create data dicitonary.
 6. Setup AWS EC2 instance.
+7. Start working!
